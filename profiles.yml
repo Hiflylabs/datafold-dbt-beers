@@ -1,4 +1,4 @@
-snowflake:
+dbt-beers:
   target: dev
   outputs:
     dev:
@@ -10,10 +10,10 @@ snowflake:
       password: "{{ env_var('SNOWFLAKE_PASSWORD') | as_text }}"
 
       role: DATAFOLDROLE
-      database: INTEGRATION
-      warehouse: INTEGRATION
-      schema: "{{ env_var('SNOWFLAKE_SCHEMA') | as_text }}"
-      threads: 5
+      database: DATAFOLD_DEMO
+      warehouse: COMPUTE_WH
+      schema: BEER_ANALYTICS
+      threads: 1
 
 databricks:
   target: dev
